@@ -37,6 +37,7 @@ requirements:
     - pthread-stubs
     - xorg-kbproto
     - xorg-libx11 >=1.6,<2
+    # Additional constraintless xorg-libx11 dep below is for conda-build to add potential pinning to.
     - xorg-libx11
     - xorg-util-macros
     - xorg-xextproto
