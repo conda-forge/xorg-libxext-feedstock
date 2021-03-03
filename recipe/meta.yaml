@@ -37,11 +37,12 @@ requirements:
     - pthread-stubs
     - xorg-kbproto
     - xorg-libx11 >=1.6,<2
+    - xorg-libx11
     - xorg-util-macros
     - xorg-xextproto
     - xorg-xproto
   run:
-    - xorg-libx11 >=1.6,<2
+    - {{ pin_compatible('xorg-libx11') }}
     - xorg-xextproto
 
 test:
