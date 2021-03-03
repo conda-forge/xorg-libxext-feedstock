@@ -36,12 +36,12 @@ requirements:
   host:
     - pthread-stubs
     - xorg-kbproto
-    - xorg-libx11 1.6.*
+    - xorg-libx11 >=1.6,<2
     - xorg-util-macros
     - xorg-xextproto
     - xorg-xproto
   run:
-    - xorg-libx11 1.6.*
+    - xorg-libx11 >=1.6,<2
     - xorg-xextproto
 
 test:
