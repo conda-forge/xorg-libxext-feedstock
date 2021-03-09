@@ -69,7 +69,7 @@ configure_args=(
     --disable-silent-rules
 )
 
-./configure "${configure_args[@]}"
+./configure "${configure_args[@]}" || { cat config.log ; exit 1 ; }
 make -j$CPU_COUNT
 make install
 if [[ "${CONDA_BUILD_CROSS_COMPILATION}" != "1" ]]; then
