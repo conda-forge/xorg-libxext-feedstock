@@ -10,13 +10,14 @@ package:
   version: {{ version }}
 
 source:
-  fn: {{ name }}-{{ version }}.tar.bz2
   url: https://www.x.org/releases/individual/{{ xorg_category }}/{{ xorg_name }}-{{ version }}.tar.bz2
   sha256: {{ sha256 }}
 
 build:
-  number: 1
+  number: 2
   detect_binary_files_with_prefix: true
+  run_exports:
+    - {{ pin_subpackage(name|lower) }}
 
 requirements:
   build:
