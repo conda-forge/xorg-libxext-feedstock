@@ -3,7 +3,7 @@
 {% set name = "xorg-" ~ xorg_name %}
 {% set version = "1.3.6" %}
 {% set sha256 = "edb59fa23994e405fdc5b400afdf5820ae6160b94f35e3dc3da4457a16e89753" %}
-{% set am_version = "1.15" %} # keep synchronized with build.sh
+{% set am_version = "1.16" %} # keep synchronized with build.sh
 
 package:
   name: {{ name|lower }}
@@ -15,7 +15,6 @@ source:
 
 build:
   number: 0
-  detect_binary_files_with_prefix: true
   run_exports:
     - {{ pin_subpackage(name|lower) }}
 
@@ -30,9 +29,9 @@ requirements:
     - m2-base                      # [win]
     - make                         # [unix]
     - m2-make                      # [win]
-    - {{ compiler('c') }}          # [unix]
+    - {{ compiler("c") }}          # [unix]
     - {{ stdlib("c") }}            # [unix]
-    - {{ compiler('m2w64_c') }}    # [win]
+    - {{ compiler("m2w64_c") }}    # [win]
     - {{ stdlib("m2w64_c") }}      # [win]
     - autoconf                     # [unix]
     - automake                     # [unix]
